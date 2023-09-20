@@ -25,6 +25,10 @@ export class AuthService {
     );
   }
 
+  logout(){
+    this.tokenService.removeToken();
+  }
+
   register(email: string, password: string, name: string){
     return this.http.post(`${this.apiUrl}/api/v1/auth/register`, {email, password, name})
   }
