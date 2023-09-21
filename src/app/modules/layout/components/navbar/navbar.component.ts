@@ -21,6 +21,8 @@ export class NavbarComponent {
   isOpenOverlayAvatar = false;
   isOpenOverlayBoards = false;
 
+  user$ = this.authService.users$
+
   constructor(
     private authService: AuthService,
     private router: Router

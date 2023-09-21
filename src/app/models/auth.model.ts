@@ -1,4 +1,4 @@
 export interface ResponseLogin {
-  acces_token: string;
+  access_token: string;
   refresh_token: string;
 }
