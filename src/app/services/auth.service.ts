@@ -28,7 +28,8 @@ export class AuthService {
   login(email: string, password: string){
     return this.http.post<ResponseLogin>(`${this.apiUrl}/api/v1/auth/login`, {email, password}).pipe(
       tap( response => {
-        this.tokenService.saveToken(response.access_token)
+        this.tokenService.saveToken(response.access_token);
+        this.tokenService.saveRefreshToken(response.refresh_token);
       })
     );
   }
